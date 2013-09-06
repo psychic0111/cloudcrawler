@@ -1,0 +1,5 @@
+.Frame .float_frame{}
+.table_list .TD_Bgcolor1{ background-color:#fff; color:#333;padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow: ellipsis;}
+.table_list .TD_Bgcolor2{ background-color:#f9f9f9; color:#333;padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow: ellipsis;}
+.filterbackground{ display: none;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  background-color: black;  z-index:1;  -moz-opacity: 0.4;  opacity:.4;  filter: alpha(opacity=40);}
+.Frame .float_frame2{ position:absolute;left:45%;top:25%}

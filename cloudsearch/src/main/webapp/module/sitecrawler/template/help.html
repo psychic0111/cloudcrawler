@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>正则表达式帮助</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size:12px;
+	line-height:20px
+}
+.titletxt{
+font-size:16px;
+font-weight:bold;
+}
+.codetxt{
+background-color:#EBEBEB;
+font-size:12px;
+padding-left:10px;
+margin-bottom:5px;
+}
+-->
+</style></head>
+
+<body>
+<div style="width:500px;margin:10px;border:1px solid #CCCCCC" align="center">
+<div align="left">
+<div align="center" class="titletxt" style="margin-top:5px;margin-bottom:10px;">正则表达式帮助</div>
+<div >&nbsp;&nbsp;按照系统指定的规则语法，通过配置相应的正则表达式，系统会根据正则表达式来匹配地址。</div>
+<div>
+  <p><strong>1、正则匹配，它是以~开头</strong> <br/>
+       以新浪网的新闻模板举例，其中分为很多的栏目，可以配置如下的表达式 
+  <div class="codetxt" > ~http://news.sina.com.cn/[\w]*?/[/scvpd]*?2009-[\d]{2}-[\d]{2}/[\d]*?.shtml</div>
+    [\w]*? \w 表示只能是字母，*表示在它之前的内容可以出现0-n次，？在它之前的内容可以出现0-1次<br/>
+	[\d]{n} 表示\d只能是数字，{n}表示只能出现n次<br/>
+	[\d]{n,m}表示只能是数字，并且出现的次数在n 和 m之间<br/>
+   根据匹配的规则这样像一下的地址都能通过该模板进行匹配<br/>
+   <div class="codetxt" >
+	http://news.sina.com.cn/c/2009-10-09/100918794567.shtml <br/>
+	http://news.sina.com.cn/w/2009-10-09/040618791802.shtml <br/>
+	http://news.sina.com.cn/pl/2009-10-09/083818793819.shtml <br/>
+	http://news.sina.com.cn/s/2009-10-09/104018794757.shtml  <br/>
+	...............等地址都能通过正则匹配<br/></div>
+	<strong>2、包含字符串匹配</strong> <br/>
+	   包含字符串表示只要该地址包含该字符串即可套用模板文件;以天涯论坛举例
+    <div class="codetxt" > www.tianya.cn/publicforum/content/ </div>
+	只要地址包含该字符串就可以套用该模板，以下地址都可以被套用<br/>
+	<div class="codetxt" >
+	http://www.tianya.cn/techforum/content/823/723.shtml<br/>
+	http://www.tianya.cn/publicforum/content/play/1/146399.shtml<br/>
+	http://www.tianya.cn/publicforum/content/no11/1/778638.shtml<br/>
+	http://www.tianya.cn/publicforum/content/free/1/1705546.shtml<br/>
+	...............等地址都能套用模板<br/>
+	
+	</div>
+	</p>
+</div>
+	
+</div>
+</div>
+</body>
+</html>

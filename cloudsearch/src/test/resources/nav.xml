@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navs>
+	<nav ID="index" name="index" text="首页">
+		<region text="爬虫管理" img="mag.png">
+			<link text="爬虫管理" name="indexStuctSetting">/crawler/crawler.do</link>
+			<!-- <link text="地址库管理" name="indexMgr">#</link> -->
+		</region>
+		<region text="日志管理" img="mag.png">
+			<link text="日志管理" name="CrawlerLogsManager">/crawlerlog/crawlerlog.do</link>
+		</region>
+	</nav>
+
+	<nav ID="indexMgr" name="indexMgr" text="站点采集">
+		<region text="站点配置" img="index.png">
+			<link text="站点分类" name="indexFieldSetting">/siteCategory/siteCategory.do</link>
+			<link text="站点管理" name="indexDirSetting">site/site.do</link>
+			<link text="区域管理" name="indexFieldSetting">/region/region.do</link>
+		</region>
+		<region text="采集模板" name="dataMgr" img="index.png">
+			<link name="dataMgr" text="模板分类">/templateCategory/templateCategory.do</link>
+			<link name="dataStatue" text="模板管理">/template/template.do</link>
+		</region>
+		<region text="网络设置" name="dataMgr" img="index.png">
+			<link text="网络连接参数" name="dataMgr" >/netParam/netParam.do</link>
+			<link text="代理服务器设置" name="indexFieldSetting">/siteProxy/siteProxy.do</link>
+		</region>
+	</nav>
+	
+	<nav ID="dataCollect" name="dataCollect" text="全网采集">
+		<region name="collectSetting" text="全网监控" img="collect.png">
+			<link name="collectParams" text="监控词管理">/keyword/keyword.do</link>
+			<link name="collectLogInfo" text="搜索引擎管理">/engine/engine.do</link>
+			<link name="collectParams" text="全网监控">/engineControl/engineControl.do</link>
+		</region>
+	</nav>
+
+	<nav ID="dataETL" name="dataETL" text="数据处理" >
+		<region name="pluginSetting" text="插件抽取" img="data.png">
+			<link name="fileAnalzer-plugin" text="文件格式">/etl/filetype/setting.do</link>
+			<link name="dataAnalzer-plugin" text="文件解析插件">/etl/extractor/setting.do</link>
+		</region>
+		<region name="pluginSetting" text="数据转化" img="data.png">
+			<link name="dataAnalzer-plugin" text="数据转换插件">#</link>
+		</region>
+	</nav>
+
+	<nav ID="taksMagr" name="taskMgr" text="任务管理">
+		<region name="taskMgr" text="任务管理" img="task.png">
+			<link name="taskMgr" text="任务管理">/task/task.do</link>
+		</region>
+	</nav>
+	<nav ID="searchSetting" name="searchSetting" text="检索设置">
+
+	</nav>
+
+	<nav ID="portalAdmin" name="portalAdmin" text="门户管理">
+
+
+	</nav>
+
+	<nav ID="sysAdmin" name="sysAdmin" text="系统管理">
+         <region name="sysSetting" text="系统管理" img="sys.png">
+			<link name="userManager" text="用户管理">/user/setting.do</link>
+			<link name="sysLog" text="系统日志">#</link>
+            <link name="dataRestore" text="数据备份/还原">#</link>
+		</region>
+		<region name="parameterSetting" text="参数设置" img="sys.png">
+			<link name="pageSetting" text="页面设置">#</link>
+			<link name="sysMessage" text="系统信息">#</link>
+		</region>
+	</nav>
+</navs>

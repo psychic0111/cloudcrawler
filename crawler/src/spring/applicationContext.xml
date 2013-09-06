@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd    http://cxf.apache.org/jaxws    http://cxf.apache.org/schemas/jaxws.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	<jaxws:endpoint id="webdbservice" implementor="com.xdtech.platform.crawler.webservice.CrawlerService" address="/crawler">
+		<!-- 进入接口之前的拦截器 -->
+		<jaxws:inInterceptors>
+		</jaxws:inInterceptors>
+		<!-- 接口执行完之后的拦截器 -->
+		<jaxws:outInterceptors>
+		</jaxws:outInterceptors>
+	</jaxws:endpoint>
+	<jaxws:endpoint id="webcrawlerservice" implementor="com.xdtech.platform.webcrawler.webservice.CrawlerServiceImpl" address="/webcrawler">
+		<!-- 进入接口之前的拦截器 -->
+		<jaxws:inInterceptors>
+		</jaxws:inInterceptors>
+		<!-- 接口执行完之后的拦截器 -->
+		<jaxws:outInterceptors>
+		</jaxws:outInterceptors>
+	</jaxws:endpoint>
+		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/cloudserver?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="user" value="root" />
+		<property name="password" value="123456" />
+		<property name="initialPoolSize">
+			<value>10</value>
+		</property>
+		<property name="minPoolSize">
+			<value>5</value>
+		</property>
+		<property name="maxPoolSize">
+			<value>500</value>
+		</property>
+		<property name="acquireIncrement">
+			<value>5</value>
+		</property>
+		<property name="maxIdleTime">
+			<value>10</value>
+		</property>
+	</bean>
+</beans>

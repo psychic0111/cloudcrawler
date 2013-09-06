@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>xdCloudCrawler</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<script type="text/javascript" language="javascript">
+window.onresize=function(){
+	document.getElementById("iframepage").style.height = document.documentElement.clientHeight - 305 + "px";
+	
+	}   
+function iFrameHeight() {   
+     document.getElementById("iframepage").style.height = document.documentElement.clientHeight - 305 + "px";
+	   
+}   
+</script>
+</head>
+<body class="mainer_body">
+<!--header Begin-->
+<div class="header">
+  <div class="left"><img src="images/logo.png" height="50" /></div>
+  <div class="right"><img src="images/user.png"/>欢迎【Admin】 <a href="#"> <img src="images/logoff.png" /> </a> <a href="#"> <img src="images/pswedit.png" /> </a> 
+    <!--top_link Begin-->
+    <div class="top_link">
+      <div class="show">模块切换</div>
+      <div class="btn"><a href="#"><img src="images/arrow3.png" /></a></div>
+      <div class="link_list" style="display:none;">
+        <ul>
+          <li><a href="#">链接一</a></li>
+          <li><a href="#">链接二</a></li>
+          <li><a href="#">链接三</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--top_link End--> 
+  </div>
+  <div class="clear"></div>
+</div>
+
+<!--header End--> 
+<!--mainer_top Begin-->
+<div class="mainer_top">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="c1"><img src="images/main_c_left_top.png" width="5" height="5" /></td>
+      <td class="c2"><img src="images/bg_t.png" width="5" height="5" /></td>
+      <td class="c3"><img src="images/main_c_right_top.png" width="5" height="5" /></td>
+    </tr>
+  </table>
+</div>
+<!--mainer_top End--> 
+<!--mainer Begin-->
+<div class="mainer" id="mainer" > 
+  <!--mainer Begin-->
+  <div class="menus">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="c_begin"><img src="images/menu_c_left.png" width="3" height="45" /></td>
+        <td class="c_td"><img src="images/home.png"/><a href="#">首页</a></td>
+        <td class="c_td"><img src="images/index.png"/><a href="#">站点采集</a></td>
+        <td class="c_td"><img src="images/collect.png"/><a href="#">全网采集</a></td>
+        <td class="c_td"><img src="images/data.png"/><a href="#">微博采集</a></td>
+        <td class="c_td"><img src="images/mag.png"/><a href="#">爬虫管理</a></td>
+        <td class="c_td"><img src="images/task.png"/><a href="#">任务管理</a></td>
+        <td class="c_td"><img src="images/search.png"/><a href="#">云搜索</a></td>
+        <td><img src="images/sys.png"/><a href="#">系统设置</a></td>
+        <td class="c_end"><img src="images/menu_c_right.png" width="3" height="45" /></td>
+      </tr>
+    </table>
+  </div>
+  <!--menus End--> 
+  <!--mainer_content Begin-->
+  <div class="mainer_content" > 
+    <!--mainer_left Begin-->
+    <div class="mainer_left">
+      <div class="submenu">
+        <ul>
+          <li class="title"><img src="images/index2.png" />站点管理</li>
+          <li class="cur"><img src="images/arrow.png" /><a href="#">分类管理</a></li>
+          <li class="other"><img src="images/arrow.png" /><a href="#">站点管理</a></li>
+        </ul>
+      </div>
+      <div class="submenu">
+        <ul>
+          <li class="title"><img src="images/index2.png" />数据管理</li>
+          <li class="other"><img src="images/arrow.png" /><a href="#">索引数据维护</a></li>
+          <li class="other"><img src="images/arrow.png" /><a href="#">索引状态查看</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--mainer_left End--> 
+    <!--mainer_right Begin-->
+    <div class="mainer_right"> 
+      <!--nav Begin-->
+      <div class="nav">
+        <div class="left"><strong>你的位置：</strong> 首页 > 站点采集 > <span class="txt_color1">分类管理</span></div>
+        <div class="right"><img src="images/warning.png" /> 设置发生改变，请重启您的服务。</div>
+        <div class="clear"></div>
+      </div>
+      <!--nav End--> 
+      <!--Frame Begin-->
+      <div class="Frame">
+        <div class="title">
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="c1"><img src="images/title_c_left.png" width="3" height="34" /></td>
+              <td class="c2"><img src="images/index2.png"  /> 分类管理</td>
+              <td class="c3"><img src="images/title_c_right.png" width="3" height="34" /></td>
+            </tr>
+          </table>
+        </div>
+        <!--lists Begin-->
+        <div class="lists"> 
+          
+          <!--function Begin-->
+          <div class="function">
+            <div class="left">
+              <input name="" type="button" class="botton_style1" value="添加" />
+              <input name="" type="button" class="botton_style2" value="删除" />
+            </div>
+            <div class="right">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td><input name="" type="text"  class="inputTxt1"/></td>
+                  <td><input name="" type="button" class="botton_style3" value="查询" /></td>
+                </tr>
+              </table>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <!--function End--> 
+          <!--table_list Beghin-->
+          <div class="table_list" id="iframepage" >
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <th><input name="checkbox" type="checkbox" id="checkbox" checked="checked" /></th>
+                <th>编号</th>
+                <th>分类名称</th>
+                <th>分类下站点数量</th>
+                <th>创建人</th>
+              </tr>
+              <tr>
+                <td class="TD_Bgcolor1"><input type="checkbox" name="checkbox2" id="checkbox2" /></td>
+                <td class="TD_Bgcolor1"><span class="txt_color1">1</span></td>
+                <td class="TD_Bgcolor1">机构网站</td>
+                <td class="TD_Bgcolor1">20</td>
+                <td class="TD_Bgcolor1">admin</td>
+              </tr>
+              <tr>
+                <td class="TD_Bgcolor2"><input type="checkbox" name="checkbox3" id="checkbox3" /></td>
+                <td class="TD_Bgcolor2"><span class="txt_color1">2</span></td>
+                <td class="TD_Bgcolor2">站点门户</td>
+                <td class="TD_Bgcolor2">45</td>
+                <td class="TD_Bgcolor2">admin</td>
+              </tr>
+            </table>
+          </div>
+          <!--table_list End--> 
+          <!--pages Begin-->
+          <div class="pages"><a href="#">下一页</a> <a href="#" class="pages_cur">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">下一页</a> </div>
+          <!--pages End--> 
+        </div>
+        <!--lists End--> 
+      </div>
+      <!--Frame End--> 
+      
+    </div>
+    <!--mainer_right End--> 
+    
+  </div>
+  <!--mainer_content End--> 
+  
+</div>
+<!--mainer End--> 
+
+<!--footer Begin-->
+<div class="footer"> 
+  <!--mainer_bottom Begin-->
+  <div class="mainer_bottom">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td  class="c1"><img src="images/main_c_left_bottom.png" width="5" height="5" /></td>
+        <td class="c2" style="text-align:center"><img src="images/bg_t.png" width="3" height="5" /></td>
+        <td class="c3"><img src="images/main_c_right_bottom.png" width="5" height="5" /></td>
+      </tr>
+    </table>
+  </div>
+  <!--mainer_bottom End-->
+  <div class="txts">Copyright © 2010 - 2013. All Rights Reserved &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;线点科技 &nbsp;&nbsp;&nbsp;版权所有</div>
+</div>
+<!--footer End--> 
+<script type="text/javascript" language="javascript">   
+iFrameHeight()
+
+</script>
+</body>
+</html>

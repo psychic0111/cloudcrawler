@@ -1,0 +1,18 @@
+@charset "utf-8";
+.box
+{
+    border: 1px solid #d9e4f3;
+    height: 20px;
+    clip: rect( 0px, 181px, 20px, 0px );
+    overflow: hidden;
+}
+.box2
+{
+    border: 1px solid #cad9ea;
+    height: 18px;
+    clip: rect( 0px, 179px, 18px, 0px );
+    overflow: hidden;
+}
+.trOver{background-color: #f5fafe}
+.trOut{background-color: #FFFFFF}
+.trSlt{background-color: #f5fafe}

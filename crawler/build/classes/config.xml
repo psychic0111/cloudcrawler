@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app-conf>
+	<property>
+		<name>serverCrawler.webservice.url</name>
+		<value>http://127.0.0.1:8080/webservice/serverCrawler?wsdl</value>
+		<description>调度提供给爬虫服务的webservice路径</description>
+	</property>
+	<property>
+		<name>webdb.webservice.url</name>
+		<value>http://127.0.0.1:8000/webdb/service/webdbservice?wsdl</value>
+		<description>地址库webservice路径</description>
+	</property>
+	<property>
+		<name>webdbcrawler.webservice.url</name>
+		<value>http://127.0.0.1:8000/webdb/service/webdbcrawlerservice?wsdl</value>
+		<description>全网监控地址库webservice路径</description>
+	</property>
+	<property>
+		<name>crawler.code</name>
+		<value>crawler1</value>
+		<description>当前爬虫的代码</description>
+	</property>
+	<property>
+		<name>crawler.html.timeout</name>
+		<value>60000</value>
+		<description>下载html超时时间，单位毫秒</description>
+	</property>
+	<property>
+		<name>crawler.userAgent</name>
+		<value>Mozilla/5.0 (Windows NT 6.1; WOW64; rv:15.0) Gecko/20100101 Firefox/15.0.1</value>
+		<description>发送请求时使用的userAgent</description>
+	</property>
+	<property>
+		<name>crawler.redirect.maxcount</name>
+		<value>3</value>
+		<description>发送请求时使用的userAgent</description>
+	</property>
+	<property>
+		<name>webdb.url0level.tablename</name>
+		<value>webdb_l1</value>
+		<description>一级地址所使用的地址表的名称</description>
+	</property>
+	<property>
+		<name>writer.base.folder</name>
+		<value>D:/writer</value>
+		<description>文件存放的根目录</description>
+	</property>
+	<property>
+		<name>crawler.app.type</name>
+		<value>0</value>
+		<description>爬虫的应用类型：0：互联网爬虫  1：镜像网站爬虫</description>
+	</property>
+	
+	
+	<property>
+		<name>data.database.driver.class</name>
+		<value>com.mysql.jdbc.Driver</value>
+		<description>数据库驱动</description>
+	</property>
+	<property>
+		<name>data.database.url</name>
+		<value>jdbc:mysql://localhost:3306/webdb?useUnicode=true&amp;characterEncoding=UTF-8</value>
+		<description>数据连接</description>
+	</property>
+	<property>
+		<name>data.database.username</name>
+		<value>root</value>
+		<description>用户名</description>
+	</property>
+	<property>
+		<name>data.database.password</name>
+		<value>123456</value>
+		<description>数据库密码</description>
+	</property>
+	<property>
+	  <name>crawl.date.format</name>
+	  <value>
+	  	[\d]{2,4}年[\d]{1,2}月[\d]{1,2}日 [\d]{1,2}时[\d]{1,2}分[\d]{1,2}秒#yyyy年MM月dd日 HH时mm分ss秒;
+	  	[\d]{2,4}年[\d]{1,2}月[\d]{1,2}日[\d]{1,2}时[\d]{1,2}分[\d]{1,2}秒#yyyy年MM月dd日HH时mm分ss秒;
+	  	[\d]{2,4}/[\d]{1,2}/[\d]{1,2} [\d]{1,2}/[\d]{1,2}/[\d]{1,2}#yyyy/MM/dd HH/mm/ss;
+	  	[\d]{2,4}/[\d]{1,2}/[\d]{1,2} [\d]{1,2}-[\d]{1,2}-[\d]{1,2}#yyyy/MM/dd HH-mm-ss;
+	  	[\d]{2,4}/[\d]{1,2}/[\d]{1,2} [\d]{1,2}:[\d]{1,2}:[\d]{1,2}#yyyy/MM/dd HH:mm:ss;
+	  	[\d]{2,4}-[\d]{1,2}-[\d]{1,2} [\d]{1,2}:[\d]{1,2}:[\d]{1,2}#yyyy-MM-dd HH:mm:ss;
+	  	[\d]{2,4}-[\d]{1,2}-[\d]{1,2} [\d]{1,2}-[\d]{1,2}-[\d]{1,2}#yyyy-MM-dd HH-mm-ss;
+	  	[\d]{2,4}年[\d]{1,2}月[\d]{1,2}日 [\d]{1,2}时[\d]{1,2}分#yyyy年MM月dd日 HH时mm分;
+	  	[\d]{2,4}年[\d]{1,2}月[\d]{1,2}日[\d]{1,2}时[\d]{1,2}分#yyyy年MM月dd日HH时mm分;
+	  	[\d]{2,4}年[\d]{1,2}月[\d]{1,2}日[\d]{1,2}:[\d]{1,2}#yyyy年MM月dd日HH:mm;
+	  	[\d]{2,4}/[\d]{1,2}/[\d]{1,2} [\d]{1,2}/[\d]{1,2}#yyyy/MM/dd HH/mm;
+	  	[\d]{2,4}/[\d]{1,2}/[\d]{1,2} [\d]{1,2}-[\d]{1,2}#yyyy/MM/dd HH-mm;
+	  	[\d]{2,4}/[\d]{1,2}/[\d]{1,2} [\d]{1,2}:[\d]{1,2}#yyyy/MM/dd HH:mm;
+	  	[\d]{2,4}-[\d]{1,2}-[\d]{1,2} [\d]{1,2}:[\d]{1,2}#yyyy-MM-dd HH:mm;
+	  	[\d]{2,4}-[\d]{1,2}-[\d]{1,2} [\d]{1,2}-[\d]{1,2}#yyyy-MM-dd HH-mm;
+	  	[\d]{2,4}年[\d]{1,2}月[\d]{1,2}日 [\d]{1,2}时#yyyy年MM月dd日 HH时;
+	  	[\d]{2,4}年[\d]{1,2}月[\d]{1,2}日[\d]{1,2}时#yyyy年MM月dd日HH时;
+	  	[\d]{2,4}/[\d]{1,2}/[\d]{1,2} [\d]{1,2}#yyyy/MM/dd HH;
+	  	[\d]{2,4}-[\d]{1,2}-[\d]{1,2} [\d]{1,2}#yyyy-MM-dd HH;
+	  	[\d]{2,4}年[\d]{1,2}月[\d]{1,2}日#yyyy年MM月dd日;
+	  	[\d]{2,4}/[\d]{1,2}/[\d]{1,2}#yyyy/MM/dd;
+	  	[\d]{2,4}-[\d]{1,2}-[\d]{1,2}#yyyy-MM-dd;
+	  	[\d]{14}#yyyyMMddHHmmss;
+	  	[\d]{12}#yyyyMMddHHmm;
+	  	[\d]{10}#yyyyMMddHH;
+	  	[\d]{8}#yyyyMMdd;
+	  </value>
+	  <description>初始化解析日期</description>
+	</property>
+	<property>
+		<name>system.save.snapshot</name>
+		<value>true</value>
+		<description>是否存储快照</description>
+	</property>
+	<property>
+		<name>crawler.type.trace</name>
+		<value>false</value>
+		<description>是否追踪爬虫</description>
+	</property>
+</app-conf>

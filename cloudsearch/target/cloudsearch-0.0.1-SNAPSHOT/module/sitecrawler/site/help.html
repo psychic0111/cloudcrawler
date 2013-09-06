@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>规则帮助</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size:12px;
+	line-height:20px
+}
+.titletxt{
+font-size:16px;
+font-weight:bold;
+}
+.codetxt{
+background-color:#EBEBEB;
+font-size:12px;
+padding-left:10px;
+margin-bottom:5px;
+}
+-->
+</style></head>
+<body style="text-align: center;">
+<div style="width:500px;margin:10px;border:1px solid #CCCCCC" align="center">
+<div align="left">
+<div align="center" class="titletxt" style="margin-top:5px;margin-bottom:10px;">动态地址规则帮助</div>
+<div >&nbsp;&nbsp;按照系统指定的规则语法，通过配置相应的地址表达式，系统会自动根据表达式生成一些地址，这些地址会随站点的入品地址一起采集被采集，相当于一次配置了多个入口地址。</div>
+<div>
+  <p><strong>[范围类型地址] </strong>此种类型的地址应该有一定的规则，就是所有的地址的某一部分在有一定的数字范围之内，如需要采集新浪内地的新闻，可以配置如下表达式:
+  <div class="codetxt" >http://roll.news.sina.com.cn/news/gnxw/gdxw1/index_${range[2-10]}.shtml</div>
+经过系统处理后就会产生如下所示的地址:
+	<div class="codetxt" >http://roll.news.sina.com.cn/news/gnxw/gdxw1/index_2.shtml  
+http://roll.news.sina.com.cn/news/gnxw/gdxw1/index_3.shtml  
+http://roll.news.sina.com.cn/news/gnxw/gdxw1/index_4.shtml  
+http://roll.news.sina.com.cn/news/gnxw/gdxw1/index_5.shtml  
+http://roll.news.sina.com.cn/news/gnxw/gdxw1/index_6.shtml  
+http://roll.news.sina.com.cn/news/gnxw/gdxw1/index_7.shtml  
+http://roll.news.sina.com.cn/news/gnxw/gdxw1/index_8.shtml  
+http://roll.news.sina.com.cn/news/gnxw/gdxw1/index_9.shtml  
+http://roll.news.sina.com.cn/news/gnxw/gdxw1/index_10.shtml  </div>
+	
+	<strong>[枚举类型地址]</strong>:此种类型的地址特点是地址中的某一部分由特定的一些字符构成，比如说要采集新浪国内 国际 社会的新闻，可以配置如下表达式:<BR>
+	<div class="codetxt" >http://news.sina.com.cn/${enum[china@world@society]}/</div>
+	经过系统处理后就会产生如下所示的地址:
+	<div class="codetxt" >
+		http://news.sina.com.cn/china/<br/>
+		http://news.sina.com.cn/world/<br/>
+		http://news.sina.com.cn/society/
+	</div>
+	<strong>[日期类型地址]</strong>:此种类型的地址特点是地址中的某一部分是由格式化后的日期字符组成。
+		<div class="codetxt" >http://roll.news.sina.com.cn/news/gnxw/gdxw1/${date[theday:yyyy-MM-dd]}.shtml</div>
+			系统会把用${date[theday:yyyy-MM-dd]}表示的这部分按照指定的格式化方式把当天的时间格式化替换到表达式上，产生地址为
+		<div class="codetxt" >http://roll.news.sina.com.cn/news/gnxw/gdxw1/2009-08-12.shtml</div>
+	 	&nbsp;&nbsp;日期格式地址还支持<br/>
+		1.月份：${date[themonth:yyyy-MM-dd]} 系统会把用这个字符串表示的地址中的部分把当月到今天为止的日期格式化后替换到地址表达式中，如配置：
+		<div class="codetxt" >http://roll.news.sina.com.cn/news/gnxw/gdxw1/${date[themonth:yyyy-MM-dd]}.shtml</div>
+			产生地址为
+		<div class="codetxt" >
+			http://roll.news.sina.com.cn/news/gnxw/gdxw1/2009-08-01.shtml<br/>
+			...............<br/>
+			http://roll.news.sina.com.cn/news/gnxw/gdxw1/2009-08-12.shtml
+		</div>
+		2.季度：${date[thequart:yyyy-MM-dd]} 		系统会把用这个	字符串表示的地址中的部分把当前季度每一天的日期格式化后替换到地址表达式中，如配置：
+		<div class="codetxt" >http://roll.news.sina.com.cn/news/gnxw/gdxw1/${date[thequart:yyyy-MM-dd]}.shtml</div>
+			产生地址为
+	  <div class="codetxt" >
+			http://roll.news.sina.com.cn/news/gnxw/gdxw1/2009-08-01.shtml<br/>
+			...............<br/>
+			http://roll.news.sina.com.cn/news/gnxw/gdxw1/2009-10-31.shtml </div>
+		3.年份：${date[theyear:yyyy-MM-dd]} 系统会把用这个字符串表示的地址中的部分把年每一天的日期格式化后替换到地址表达式中，如配置：
+		<div class="codetxt" >http://roll.news.sina.com.cn/news/gnxw/gdxw1/${date[theyear:yyyy-MM-dd]}.shtml</div>
+			产生地址为
+		<div class="codetxt" >
+			http://roll.news.sina.com.cn/news/gnxw/gdxw1/2009-01-01.shtml <br/>
+			...............<br/>
+			http://roll.news.sina.com.cn/news/gnxw/gdxw1/2009-12-31.shtml 
+		</div>
+	</p>
+</div>
+	
+</div>
+</div>
+</body>
+</html>

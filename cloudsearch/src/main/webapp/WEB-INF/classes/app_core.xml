@@ -1,0 +1,103 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                    http://www.springframework.org/schema/aop
+                    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                     http://www.springframework.org/schema/tx
+                     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                     http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+
+	<!-- 自动搜索@Controller标注的类 -->
+	<context:component-scan base-package="com.xdtech" />
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/cloudserver?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="user" value="root" />
+		<property name="password" value="123456" />
+		<property name="initialPoolSize">
+			<value>10</value>
+		</property>
+		<property name="minPoolSize">
+			<value>5</value>
+		</property>
+		<property name="maxPoolSize">
+			<value>500</value>
+		</property>
+		<property name="acquireIncrement">
+			<value>5</value>
+		</property>
+		<property name="maxIdleTime">
+			<value>10</value>
+		</property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<!--
+					prop
+					key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+					<prop
+					key="hibernate.connection.url">jdbc:mysql://localhost:3306/cp</prop>
+					<prop key="hibernate.connection.username">root</prop> <prop
+					key="hibernate.connection.password">123456</prop
+				-->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="eventListeners"  >
+			<map>
+				<entry>
+					<key>
+						<value>post-insert</value>
+					</key>
+					<ref bean="auditlogEvent" />
+				</entry>
+				<entry>
+					<key>
+						<value>post-update</value>
+					</key>
+					<ref bean="auditlogEvent" />
+				</entry>
+				<entry>
+					<key>
+						<value>post-delete</value>
+					</key>
+					<ref bean="auditlogEvent" />
+				</entry>
+			</map>
+		</property>
+		<property name="packagesToScan" value="com.xdtech.cloudsearch.module" />
+	</bean>
+<bean id="auditlogEvent" class="com.xdtech.cloudsearch.web.listener.LogAuditListener"></bean>
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 启用  annotation 声明式事务 -->
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	<jaxws:endpoint id="keywordservice"
+		implementor="com.xdtech.cloudsearch.webservice.xdservice.ServerCrawlerServiceImpl" address="/serverCrawler">
+	</jaxws:endpoint>
+</beans>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities >
+	<!-- 记录的日志的实体类 -->
+	<entity clazz="User" description="用户" operate="用户管理">
+		<property name="username">用户名</property>  
+	</entity>
+	<entity clazz="SiteCategory" description="站点分类" operate="站点分类管理">
+		<property name="name">分类名称</property>  
+	</entity>
+	<entity clazz="Site" description="站点" operate="站点管理">
+		<property name="name">站点名称</property>  
+	</entity>
+	<entity clazz="Region" description="区域" operate="区域管理">
+		<property name="areaName">区域名称</property>  
+	</entity>
+	<entity clazz="TemplateCategory" description="模板分类" operate="模板分类管理">
+		<property name="name">分类名称</property>  
+	</entity>
+	<entity clazz="Template" description="模板" operate="模板管理">
+		<property name="name">模板名称</property>  
+	</entity>
+	<entity clazz="NetParam" description="网络参数连接" operate="网络参数连接管理">
+		<property name="connetCount">连接次数</property>
+		<property name="timeoutSecond">超时时间</property>  
+		<property name="waiCount">网络连接等待次数</property>  
+		<property name="referCount">跳转次数</property>    
+	</entity>
+	<entity clazz="SiteProxy" description="代理服务器" operate="代理服务器管理">
+		<property name="name">代理名称</property>  
+	</entity>
+	<entity clazz="Keyword" description="监控词" operate="监控词">
+		<property name="words">监控词</property>  
+	</entity>
+	<entity clazz="Engine" description="搜索引擎" operate="搜索引擎管理">
+		<property name="enginName">搜索引擎名称</property>  
+	</entity>
+	<entity clazz="Crawler" description="爬虫" operate="爬虫管理">
+		<property name="name">爬虫名称</property>  
+	</entity>
+	<entity clazz="Task" description="任务" operate="任务管理">
+		<property name="taskName">任务名称</property>  
+	</entity>
+</entities>

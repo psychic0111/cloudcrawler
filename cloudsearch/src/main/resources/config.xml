@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app-conf>
+	<property>
+		<name>system.area.type</name>
+		<value>市级资讯网站|市级生活论坛|市级新闻网站|全国伊斯兰资讯|全国教育门户|全国综合论坛|全国财经门户|全国新闻门户|全国房产论坛</value>
+		<description>区域类型</description>
+	</property>
+	<property>
+		<name>system.media.type</name>
+		<value>网页|媒体|资讯</value>
+		<description>媒体类型</description>
+	</property>
+	<property>
+		<name>system.site.htmlcode</name>
+		<value>UTF-8|GBK|GB2312|GB18030|ISO-8859-1|BIG5</value>
+		<description>媒体类型</description>
+	</property>
+</app-conf>

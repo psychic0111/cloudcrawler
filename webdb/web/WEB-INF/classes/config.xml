@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<app-conf>
+	<property>
+		<name>berkeleydb.root.folder.path</name>
+		<value>C:/临时文件/bdbdata</value>
+		<description>BDB数据库的保存路径</description>
+	</property>
+</app-conf>

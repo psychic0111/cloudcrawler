@@ -1,0 +1,60 @@
+﻿@charset "utf-8";
+.tableblue {
+	border-collapse: collapse;
+	empty-cells: show;
+	color: #666;
+}
+ 
+.trblue {
+	background-color: #f5fafe;
+	height: 23px;
+}
+
+.trwhite {
+	background-color: #ffffff;
+	height: 23px;
+}
+.tdblue {
+	border: 1px solid #cad9ea;
+	padding: 0 1em 0;
+	line-height:15px;
+	padding-top:1px;
+}
+.thblue {
+	border: 1px solid #cad9ea;
+	padding: 0 1em 0;
+	word-break: keep-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-top:1px;
+	text-align:center;
+}
+.tdLeftblue {
+	border: 1px solid #cad9ea;
+	padding: 0 1em 0;
+	line-height:15px;
+	padding-top:1px;
+	text-align:right;
+}
+.lastTdblue {
+	border: 1px solid #cad9ea;
+	padding: 0 1em 0;
+	line-height:15px;
+	padding-top:1px;
+	text-align:right;
+	padding-right:10px;
+	padding-top:10px;
+}
+.redA {
+	color:#FF0000;
+	text-decoration:underline;
+}
+.blueA {
+	color:#12c;
+	text-decoration:underline;
+}
+.buttonDiv{clear:both; padding:0 5px;height:30px; padding-top:5px;}
+.buttonDiv ul{float:right;padding-right:5px;}
+.buttonDiv ul li{float:left; margin-left:5px;}
+.btnStyle{background:url(../../image/btn_bg2.png) repeat-x; border:1px #9a9a9a solid; height:18px;}
